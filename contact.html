@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Delphin Bhughio Thomas</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">Delphin<span>.</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="developpement.html">Développement</a></li>
+        <li><a href="photographie.html">Photographie</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-header">
+      <h1>Parlons de votre Projet</h1>
+      <p>N'hésitez pas à me contacter pour un projet web ou une session photo.</p>
+    </div>
+
+    <!-- Formulaire configuré pour envoyer l'e-mail directement vers votre boîte Gmail -->
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      
+      <!-- Remplacez la valeur ci-dessous par votre Access Key gratuite -->
+      <input type="hidden" name="apikey" value="865176e1-5ffb-4224-9c09-8e2e715b9ead">
+
+      <div class="form-group">
+        <label for="name">Nom complet</label>
+        <input type="text" id="name" name="name" placeholder="Votre nom" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Adresse email</label>
+        <input type="email" id="email" name="email" placeholder="votre.email@exemple.com" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Décrivez votre besoin..." required></textarea>
+      </div>
+
+      <!-- Optionnel : Redirection après l'envoi (vous pouvez créer une page merci.html ou laisser ainsi) -->
+      <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Delphin Bhughio Thomas. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>

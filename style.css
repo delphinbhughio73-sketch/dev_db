@@ -255,7 +255,7 @@ footer {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
-/* Bouton Hamburger (caché sur grand écran) */
+/* Bouton Hamburger */
 .menu-toggle {
   display: none;
   background: none;
@@ -265,10 +265,10 @@ footer {
   cursor: pointer;
 }
 
-/* Styles pour écrans mobiles (largeur max : 768px) */
+/* Styles uniquement pour mobile (écran de moins de 768px) */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
+    display: block !important; /* Force l'affichage sur téléphone */
   }
 
   .nav-links {
@@ -284,8 +284,7 @@ footer {
     gap: 1.2rem;
   }
 
-  /* Classe activée par JavaScript pour afficher le menu */
   .nav-links.active {
-    display: flex;
+    display: flex !important; /* Affiche le menu lors du clic */
   }
 }

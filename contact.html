@@ -3,32 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delphin Bhughio Thomas | Accueil</title>
+  <title>Delphin Bhughio Thomas | Contact</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
+  <!-- ========================================== -->
+  <!-- EN-TÊTE AVEC LE BOUTON HAMBURGER           -->
+  <!-- ========================================== -->
   <header>
     <nav class="navbar">
       <div class="logo">Delphin<span>.</span></div>
 
-      <!-- Bouton Hamburger -->
+      <!-- Bouton Hamburger (Visible sur mobile) -->
       <button class="menu-toggle" id="mobile-menu" aria-label="Ouvrir le menu">
         <i class="fa-solid fa-bars"></i>
       </button>
 
       <!-- Menu de navigation -->
       <ul class="nav-links" id="nav-list">
-        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="developpement.html">Développement</a></li>
         <li><a href="photographie.html">Photographie</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- ========================================== -->
+  <!-- CONTENU PRINCIPAL (FORMULAIRE)             -->
+  <!-- ========================================== -->
   <main>
     <div class="page-header">
       <h1>Parlons de votre Projet</h1>
@@ -38,7 +44,7 @@
     <!-- Formulaire configuré pour envoyer l'e-mail directement vers votre boîte Gmail -->
     <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
       
-      <!-- Remplacez la valeur ci-dessous par votre Access Key gratuite -->
+      <!-- Votre Access Key Web3Forms -->
       <input type="hidden" name="apikey" value="865176e1-5ffb-4224-9c09-8e2e715b9ead">
 
       <div class="form-group">
@@ -56,16 +62,41 @@
         <textarea id="message" name="message" rows="5" placeholder="Décrivez votre besoin..." required></textarea>
       </div>
 
-      <!-- Optionnel : Redirection après l'envoi (vous pouvez créer une page merci.html ou laisser ainsi) -->
+      <!-- Redirection après l'envoi -->
       <input type="hidden" name="redirect" value="https://web3forms.com/success">
 
       <button type="submit" class="btn btn-primary">Envoyer</button>
     </form>
   </main>
 
+  <!-- ========================================== -->
+  <!-- PIED DE PAGE                               -->
+  <!-- ========================================== -->
   <footer>
     <p>&copy; 2026 Delphin Bhughio Thomas. Tous droits réservés.</p>
   </footer>
+
+  <!-- ========================================== -->
+  <!-- SCRIPT JAVASCRIPT POUR LE MENU HAMBURGER   -->
+  <!-- ========================================== -->
+  <script>
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+    const menuIcon = menuToggle.querySelector('i');
+
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      
+      // Alterne l'icône entre les barres et la croix
+      if (navList.classList.contains('active')) {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+      } else {
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      }
+    });
+  </script>
 
 </body>
 </html>

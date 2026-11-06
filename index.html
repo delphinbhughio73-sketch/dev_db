@@ -12,7 +12,14 @@
   <header>
     <nav class="navbar">
       <div class="logo">Delphin<span>.</span></div>
-      <ul class="nav-links">
+
+      <!-- Bouton Hamburger -->
+      <button class="menu-toggle" id="mobile-menu" aria-label="Ouvrir le menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <!-- Menu de navigation -->
+      <ul class="nav-links" id="nav-list">
         <li><a href="index.html" class="active">Accueil</a></li>
         <li><a href="apropos.html">À propos</a></li>
         <li><a href="developpement.html">Développement</a></li>
@@ -38,6 +45,25 @@
   <footer>
     <p>&copy; 2026 Delphin Bhughio Thomas. Tous droits réservés.</p>
   </footer>
+
+  <!-- Script JS pour activer le menu mobile -->
+  <script>
+    const menuToggle = document.getElementById('mobile-menu');
+    const navList = document.getElementById('nav-list');
+    const menuIcon = menuToggle.querySelector('i');
+
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      
+      if (navList.classList.contains('active')) {
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-xmark');
+      } else {
+        menuIcon.classList.remove('fa-xmark');
+        menuIcon.classList.add('fa-bars');
+      }
+    });
+  </script>
 
 </body>
 </html>

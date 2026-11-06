@@ -255,3 +255,37 @@ footer {
   color: var(--text-muted);
   font-size: 0.9rem;
 }
+/* Bouton Hamburger (caché sur grand écran) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-main);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Styles pour écrans mobiles (largeur max : 768px) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    gap: 1.2rem;
+  }
+
+  /* Classe activée par JavaScript pour afficher le menu */
+  .nav-links.active {
+    display: flex;
+  }
+}
